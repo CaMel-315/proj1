@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body{
+            margin-top: 70px;
+            background-color: #333;
+            color: #fff;
+            }
+    </style>
+
+ <title>Wind Speed Converter </title>
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6">
+    <h1 class="display-4 text-center md-6">Wind Speed Converter</h1>
+                <form>
+                <div class="form-group"> 
+                <input 
+                id="knotsInput"
+                type="number" 
+                class="form-control form-control-lg" placeholder="Enter in knots...">
+                </div>
+                </form>
+
+                <div id="output">
+                <div class="card bg-success mb-2">
+                <div class="card-body">
+                <h4>KM/H:</h4>
+                <div id="kmhOutput"></div>
+                </div>
+                </div>
+
+                
+                <div class="card bg-primary mb-2">
+                <div class="card-body">
+                <h4>M/S:</h4>
+                <div id="msOutput"></div>
+                </div>
+                </div>
+
+                
+                <div class="card bg-danger mb-2">
+                <div class="card-body">
+                <h4>MPH:</h4>
+                <div id="mphOutput"></div>
+                </div>
+                </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("output").style.visibility = "hidden";
+        document.getElementById("knotsInput").addEventListener("input", function(e) {
+            document.getElementById("output").style.visibility = "visible";
+            let knots = e.target.value;
+        document.getElementById("kmhOutput").innerHTML = knots * 1.852;
+        document.getElementById("msOutput").innerHTML = knots / 1.944;
+        document.getElementById("mphOutput").innerHTML = knots * 1.151;
+
+
+        });
+
+    </script>
+</body>
+</html>
