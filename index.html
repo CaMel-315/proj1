@@ -19,7 +19,7 @@
 <body>
     <div class="container">
     <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 offset-md-6">
     <h1 class="display-4 text-center md-6">Wind Speed Converter</h1>
                 <form>
                 <div class="form-group"> 
@@ -61,12 +61,12 @@
     </div>
     <script>
         document.getElementById("output").style.visibility = "hidden";
-        document.getElementById("knotsInput").addEventListener("input", function(e) {
+        document.getElementById("knotsInput").addEventListener("input",function(e) {
             document.getElementById("output").style.visibility = "visible";
-            let knots = e.target.value;
-        document.getElementById("kmhOutput").innerHTML = knots * 1.852;
-        document.getElementById("msOutput").innerHTML = knots / 1.944;
-        document.getElementById("mphOutput").innerHTML = knots * 1.151;
+        let knots = e.target.value;
+        document.getElementById("kmhOutput").innerHTML = (Math.round(knots * 1.85));
+        document.getElementById("msOutput").innerHTML = (Math.round(knots / 1.94));
+        document.getElementById("mphOutput").innerHTML = (Math.round(knots * 1.15));
 
 
         });
